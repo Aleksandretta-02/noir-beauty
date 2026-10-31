@@ -1,0 +1,300 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #0b0b0b;
+    color: #f5f3ef;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    padding: 30px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: #999;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero {
+    min-height: 650px;
+    padding: 100px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.eyebrow {
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 7vw, 100px);
+    font-weight: normal;
+    line-height: 1;
+}
+
+h1 em {
+    color: #aaa;
+}
+
+.intro {
+    color: #aaa;
+    line-height: 1.8;
+    max-width: 400px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 16px 30px;
+    border: 1px solid white;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: white;
+    color: black;
+}
+
+.hero-image {
+    min-height: 500px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1000");
+    background-size: cover;
+    background-position: center;
+}
+
+.about,
+.services,
+.contacts {
+    padding: 100px 8%;
+    border-top: 1px solid #333;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: normal;
+}
+
+.about p:last-child {
+    color: #aaa;
+}
+
+.service-list {
+    max-width: 700px;
+}
+
+.service-list div {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    border-bottom: 1px solid #444;
+    font-size: 16px;
+}
+
+.service-list span {
+    color: #aaa;
+}
+
+footer {
+    padding: 30px 8%;
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 2px;
+    border-top: 1px solid #333;
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 7%;
+    }
+
+    .hero-image {
+        min-height: 350px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    .about,
+    .services,
+    .contacts {
+        padding: 65px 7%;
+    }
+}
+
+/* SERVICE CARDS */
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.service-card {
+    border: 1px solid #333;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #ffffff;
+}
+
+.service-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.service-card p {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+.service-card .service-number {
+    letter-spacing: 3px;
+    font-size: 11px;
+    margin-top: 20px;
+}
+
+.service-card span {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    color: white;
+}
+
+/* FIX SERVICE CARDS */
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.service-list .service-card {
+    display: block;
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid #444;
+    background: #111;
+    text-align: left;
+}
+
+.service-card img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.service-card h3 {
+    color: #fff;
+    margin: 15px 0;
+}
+
+.service-card p {
+    line-height: 1.6;
+}
+
+.service-card span {
+    display: block;
+    margin-top: 18px;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* MOBILE VERSION */
+
+@media (max-width: 650px) {
+
+    .service-list {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+
+    .service-card img {
+        height: 300px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero {
+        padding: 50px 6%;
+    }
+
+    .hero-image {
+        min-height: 280px;
+    }
+
+}
