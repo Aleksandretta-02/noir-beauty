@@ -298,3 +298,59 @@ footer {
     }
 
 }
+
+/* LUXURY ANIMATIONS */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-text {
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero-image {
+    animation: fadeUp 1.3s ease forwards;
+}
+
+.about {
+    animation: fadeUp 1.2s ease forwards;
+}
+
+/* SERVICE CARD HOVER */
+
+.service-card {
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #ffffff;
+}
+
+/* IMAGE EFFECT */
+
+.service-card img {
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.03);
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
